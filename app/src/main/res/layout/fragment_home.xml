@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:id="@+id/iv_wave"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/vp_banner"
+            android:src="@drawable/ic_wave" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="40dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/tv_deposit_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="Deposit"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/go_deposit"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:text="DEPOSIT" />
+
+                <TextView
+                    android:id="@+id/kursDepo"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="Rp. -"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/input_bg_primary"
+                    android:textSize="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/go_withdraw"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="WITHDRAWAL" />
+                <TextView
+                    android:id="@+id/kursWD"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:textAlignment="center"
+                    android:text="Rp. -"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/input_bg_primary"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/tv_Produk_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="Produk"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/wb"
+                    android:layout_marginBottom="40dp"/>
+
+            </LinearLayout>
+            </ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

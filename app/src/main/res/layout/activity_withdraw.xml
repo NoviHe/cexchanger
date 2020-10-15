@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+    tools:context=".WithdrawActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/peringatan_wd"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginBottom="16dp"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic__warning"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <ProgressBar
+                android:id="@+id/loadingWD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                android:layout_marginBottom="20dp"/>
+
+
+            <EditText
+                android:id="@+id/et_wd_nomor_akun"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nomor Akun"
+                android:padding="10dp"
+                android:inputType="number"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_wd_nama_akun"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nama Akun"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/et_wd_jumlah_usd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="80dp"
+                    android:background="@drawable/input_bg_primary"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Jumlah (USD)"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:maxLength="6"
+                    app:isDecimal="false"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-70dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="$ (Dollar)"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/et_wd_dollar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="80dp"
+                    android:background="@drawable/input_bg_primary"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Dollar"
+                    android:editable="false"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-70dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="/ Dollar"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <com.aldoapps.autoformatedittext.AutoFormatEditText
+                android:id="@+id/et_wd_jumlah_rp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Jumlah Dalam Rp (Otomatis)"
+                android:padding="10dp"
+                android:inputType="number"
+                app:isDecimal="false"
+                android:textColorHint="@color/colorPrimary" />
+
+            <Spinner
+                android:id="@+id/wd_jenis_forex"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/wd_jenis_bank"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/et_bank_lainnya"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Tulis bank Lainnya"
+                android:padding="10dp"
+                android:inputType="text"
+                android:visibility="gone"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_wd_no_rekening"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="No Rekening"
+                android:padding="10dp"
+                android:inputType="number"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_wd_atas_nama"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Atas Nama"
+                android:padding="10dp"
+                android:inputType="text"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_wd_cabang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Cabang"
+                android:padding="10dp"
+                android:inputType="text"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_wd_no_hp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="90dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="No HP"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:textColorHint="@color/colorPrimary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/buttons_wd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_wd_winsor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/submit_bg"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Konfirmasi" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_wd_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/submit_bg"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Reset" />
+    </LinearLayout>
+
+</RelativeLayout>

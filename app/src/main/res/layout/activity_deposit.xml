@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+    tools:context=".DepositActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <EditText
+                android:id="@+id/et_depo_nomor_akun"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nomor Akun"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_depo_nama_akun"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Nama Akun"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_depo_jumlah_rp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Jumlah Dalam Rp"
+                android:inputType="number"
+                android:maxLength="11"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_depo_jumlah_rp_vis"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Jumlah Dalam Rp"
+                android:inputType="number"
+                android:maxLength="11"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <com.aldoapps.autoformatedittext.AutoFormatEditText
+                    android:id="@+id/et_depo_kurs_deposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="80dp"
+                    android:background="@drawable/input_bg_primary"
+                    android:editable="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Dollar"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-70dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="/ Dollar"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_depo_jumlah_usd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="80dp"
+                    android:background="@drawable/input_bg_primary"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Jumlah (USD)"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-70dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="$ (Dollar)"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/depo_jenis_forex"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/depo_jenis_bank"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/et_depo_no_rekening"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="No Rekening"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_depo_atas_nama"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Atas Nama"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_depo_no_hp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg_primary"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="No HP"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColorHint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/deposit_text"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/btn_galeri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_bg_primary"
+                    android:drawableStart="@drawable/ic_image"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="  Pilih Gambar"
+                    android:textColor="@color/colorPrimary" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/btn_camera"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:background="@drawable/input_bg_primary"-->
+<!--                    android:drawableStart="@drawable/ic_camera"-->
+<!--                    android:gravity="center"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:text="  Pilih Gambar"-->
+<!--                    android:textColor="@color/colorPrimary" />-->
+
+            </LinearLayout>
+            
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:progress="40"/>
+
+            <ImageView
+                android:id="@+id/image_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="120dp"
+                android:scaleType="centerCrop" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp">
+
+        <ProgressBar
+            android:id="@+id/loadingDepo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons_wd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_depo_winsor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/submit_bg"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Konfirmasi" />
+
+        <Button
+            android:id="@+id/btn_depo_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/submit_bg"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Reset"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>
